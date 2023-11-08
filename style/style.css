@@ -204,6 +204,7 @@ footer{
 .card-text{
     font-size: 12px;
     font-weight: normal;
+    min-height: 30px;
 }
 
 .shape-card{
@@ -310,7 +311,7 @@ padding-left: 28px;
     
 }
 
-/* page1 */
+/* Infographics */
 .container1{
     max-width: 1280px;
     width: 100%;
@@ -319,10 +320,6 @@ padding-left: 28px;
     min-height: 670px;
     height: fit-content;
     border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
     margin-top: 20px;
 
     position: relative;
@@ -578,7 +575,7 @@ video{
     margin-top: 20px;
 }
 .center-results{
-   /*  height: 100%; */
+    height: 100%;
 }
 .modal {
     display: none;

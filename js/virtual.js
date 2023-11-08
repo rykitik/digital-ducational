@@ -1,4 +1,3 @@
-
 const option_list = document.querySelector(".option-list");
 const left_list = document.querySelector("#left-list");
 const timeCount = document.querySelector(".time-counter");
