@@ -7,25 +7,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Машиностроение: Интерактивная мини-игра</title>
 	<link rel="stylesheet" href="../style/style.css">
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<script type="text/javascript">
-	</script>
 	<style>
-	    #numbers{
+	    #numbers {
             font-weight: 700;
             font-size: 2rem;
             user-select: none;
         }
-        #variable{
+        #variable {
             font-weight: 700;
             font-size: 1rem;
             user-select: none;
         }
-        #choice{
+        #choice {
             width: 100%;
             height: 100%;
         }
-        #droppable{
+        #droppable {
             width: 100%;
             height: 100%;
         }
@@ -34,39 +31,39 @@
 </head>
 
 <body>
-	<header class="flex col">
-		<div class="container flex row">
-			<div class="logo">
+	<header class="header">
+		<div class="header__container">
+			<div class="container__logo">
                 <img src="../img/logo1.svg" alt="logo">
             </div>
-			<div class="flex col ml-90 w100">
-				<div class="header-first_content flex w100 space-between">
-					<div class="title">
+			<div class="header__logo">
+				<div class="header__logo-title">
+					<div class="header__logo-title-text">
 						<h2 class="white">Машиностроение</h2>
 					</div>
-					<div class="buttons flex align-center mt-10"> 
-                        <a href="#ex1" class="btn-nav btn-contacts" rel="modal:open">
+					<div class="header__btns-nav flex align-center mt-10"> 
+                        <a href="#ex1" class="header__btn-nav header__btn-nav--contacts" rel="modal:open">
                             Информация о контенте
                         </a> 
-                        <a href="#ex2" class="btn-nav btn-words" rel="modal:open">
+                        <a href="#ex2" class="header__btn-nav header__btn-nav--words" rel="modal:open">
                             Ключевые слова
                         </a> 
                     </div>
 				</div>
-				<div class="header-second_content">
-					<h3 class="subtitle_header">Выбор оборудования, инструмента и технологической оснастки</h3>
+				<div class="header__logo-subtitle">
+					<h3 class="header__logo-subtitle-text">Выбор оборудования, инструмента и технологической оснастки</h3>
 				</div>
 			</div>
 		</div>
-		<div class="header-second"></div>
+		<div class="header__background-subtitle"></div>
 	</header>
-	<div class="bg_color_block flex col ">
+	<main class="main-bg--gray">
 		<div class="flex justify-center align-center">
 			<div class="content1 flex col max-content w100">
 				<a href="../index.html">
 					<div class="flex align-center justify-center mt-30"><img src="../img/right alignment.png" alt="arrow" class="mr-10"><a href="../index.html" class="text_home"> На главную</a></div>
 				</a>
-				<div class="container1">
+				<div class="window container1">
 					<div class="container_header">
 						<div class="flex align-center space-between">
 							<p class="container_title"> Интерактивная мини-игра </p>
@@ -89,14 +86,18 @@
 								</div><img src="../img/stopwatch.png" alt=""></div>
 						</div>
 						<div class="flex space-between">
-							<p class="text-zadanie"></p>
+							<p class="modal__header"></p>
 						</div>
 						<div class="flex container-filling align-center justify-center quest-container">
 							<div class="flex col" id="left-list"> </div>
 							<div class="flex col option-list" id="drag"> </div>
 						</div>
 					</div>
-					<div class="arrows"><button class="hide" id="next-button"><img src="../img/ArrowRight.png" alt="ArrowRight"></button></div>
+					<div class="arrows">
+						<button class="hide" id="next-button">
+							<img src="../img/ArrowRight.png" alt="ArrowRight">
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -104,7 +105,7 @@
 			<div id="user-score">Demo Score</div> <button id="restart">Restart</button> </div>
 		<!-- results -->
 		<div class="flex justify-center align-center">
-			<div class="container2 hide">
+			<div class="window container2 hide">
 				<div class="container_header">
 					<div class="flex align-center justify-center">
 						<p class="container_title text-center"> Результаты </p>
@@ -137,11 +138,8 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="flex triangle">
-		<div class="triangle_img"><img src="../img/Group 12.png" alt="tri"></div>
-	</div>
-	</div>
+	</main>
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
 	<script src="../js/data/questions3.js"></script>

@@ -8,28 +8,28 @@
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-    <header class="flex col">
-        <div class="container flex row">
-            <div class="logo"><img src="../img/logo1.svg" alt="logo"></div>
-            <div class="flex col ml-90 w100">
-                <div class="header-first_content flex w100 space-between">
-                    <div class="title">
+    <header class="header">
+        <div class="header__container">
+            <div class="container__logo"><img src="../img/logo1.svg" alt="logo"></div>
+            <div class="header__logo">
+                <div class="header__logo-title">
+                    <div class="header__logo-title-text">
                         <h2 class="white">Машиностроение</h2>
                     </div>
-                    <div class="buttons flex align-center mt-10"> <a href="#ex1" class="btn-nav btn-contacts" rel="modal:open">Информация о контенте</a> <a href="#ex2" class="btn-nav btn-words" rel="modal:open">Ключевые слова</a> </div>
+                    <div class="header__btns-nav flex align-center mt-10"> <a href="#ex1" class="header__btn-nav header__btn-nav--contacts" rel="modal:open">Информация о контенте</a> <a href="#ex2" class="header__btn-nav header__btn-nav--words" rel="modal:open">Ключевые слова</a> </div>
                 </div>
-                <div class="header-second_content">
-                    <h3 class="subtitle_header">Выбор оборудования, инструмента и технологической оснастки</h3>
+                <div class="header__logo-subtitle">
+                    <h3 class="header__logo-subtitle-text">Выбор оборудования, инструмента и технологической оснастки</h3>
                 </div>
             </div>
         </div>
-        <div class="header-second"></div>
+        <div class="header__background-subtitle"></div>
     </header>
-    <div class="bg_color_block flex col ">
+    <main class="main-bg--gray">
         <div class="flex justify-center align-center">
             <div class="content1 flex col max-content w100">
                 <div class="flex align-center justify-center mt-30"><img src="../img/right alignment.png" alt="arrow" class="mr-10"><a href="../index.html" class="text_home"> На главную</a></div>
-                <div class="container1">
+                <div class="window container1">
                     <div class="container_header">
                         <div class="flex align-center space-between">
                             <p class="container_title"> Инфографика </p>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="container-exercise">
                         <div class="flex space-between">
-                            <p class="text-zadanie"></p>
+                            <p class="modal__header"></p>
                         </div>
                         <div class="flex container-filling align-center justify-center">
                             <div class="img-exercise"><img src="" alt="" class="img-exercise1"></div>
@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="flex justify-center align-center">
-            <div class="container2 hide">
+            <div class="window container2 hide">
                 <div class="container_header">
                     <div class="flex align-center justify-center">
                         <p class="container_title text-center"> </p>
@@ -64,14 +64,11 @@
                 </div>
                 <div class="flex center-results col mt-100 align-center justify-center">
                     <p class="text-center">Вы завершили прохождение виртуального тренажера</p>
-                    <p class="text-center"><b><a href="../index.html">Нажмите, чтобы вернуться на главную</b></p>
+                    <p class="text-center"><b><a href="../index.html">Нажмите, чтобы вернуться на главную</a></b></p>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="flex triangle">
-        <div class="triangle_img"><img src="../img/Group 12.png" alt="tri"></div>
-    </div>
+    </main>
     <script src="../js/data/questions1.js"></script>
     <script src="../js/virtual1.js"></script>
 </body>
