@@ -1,12 +1,12 @@
 const option_list = document.querySelector(".option-list");
 const left_list = document.querySelector("#left-list");
 const timeCount = document.querySelector(".time-counter");
-const buttonNext = document.getElementById("next-button");
-const container1 = document.querySelector(".container1");
-const container2 = document.querySelector(".container2");
+const buttonNext = document.querySelector(".next-btn");
+const firstAppPage = document.querySelector(".first-app-page");
+const secondAppPage = document.querySelector(".second-app-page");
 const time_after = document.querySelector(".time_after");
 
-const tab_exercise_container = document.querySelector(".tab_exercise_container");
+const tabExerciseContainer = document.querySelector(".main-window-app__header-tab-exercise-container");
 tabsShow();
 showQuestions(0);
 queCounter(1);
@@ -28,7 +28,7 @@ function tabsShow() {
   for(let i = 0; i < questions.length; i++){
     tab_tag += '<div class="tab"></div>';
   }
-  tab_exercise_container.innerHTML = tab_tag;
+  tabExerciseContainer.innerHTML = tab_tag;
 }
 
 const tab = document.querySelector(".tab");
@@ -43,8 +43,8 @@ buttonNext.onclick = ()=> {
     clearInterval(counter);
     buttonNext.classList.add("hide");
   } else{
-    container1.classList.add("hide");
-    container2.classList.remove("hide");
+    firstAppPage.classList.add("hide");
+    secondAppPage.classList.remove("hide");
     clearInterval(counter);
     time_after.innerHTML = timeCount.textContent;
     ShowResult();
@@ -56,7 +56,7 @@ buttonNext.onclick = ()=> {
 function showQuestions(index) {
   const que_text = document.querySelector(".modal__header");
   
-  tab_exercise_container.children[index].setAttribute("class", "active_tab")
+  tabExerciseContainer.children[index].setAttribute("class", "active_tab")
   let que_tag = '<span>'+ questions[index].question+'</span>';
   let option_tag = '';
   let left_tag = '';
@@ -172,8 +172,8 @@ function startTimer(time) {
     /* timeCount.innerHTML = time; */
     time--;
     if(time < 0){
-      container1.classList.toggle("hide");
-      container2.classList.toggle("hide");
+      firstAppPage.classList.toggle("hide");
+      secondAppPage.classList.toggle("hide");
         
       clearInterval(counter);
     }
@@ -186,7 +186,7 @@ function ShowResult(){
 
 
 function queCounter(index){
-  const ques_counter  = document.querySelector(".counter_exercise");
+  const ques_counter  = document.querySelector(".main-window-app__header-counter-exercise");
   let totalQuesTag = ''+ index +'/'+ questions.length +'';
   ques_counter.innerHTML = totalQuesTag;
 }

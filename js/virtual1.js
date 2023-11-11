@@ -1,14 +1,14 @@
-const option_list = document.querySelector(".text-exercise");
+const option_list = document.querySelector(".main-window-app__exercises-content-text");
 const timeCount = document.querySelector(".time-counter");
-const buttonNext = document.getElementById("next-button");
-const container1 = document.querySelector(".container1");
-const container2 = document.querySelector(".container2");
-const buttonPrev = document.querySelector(".prevbutton");
+const firstAppPage = document.querySelector(".first-app-page");
+const secondAppPage = document.querySelector(".second-app-page");
+const buttonNext = document.querySelector(".next-btn");
+const buttonPrev = document.querySelector(".prev-btn");
 const time_after = document.querySelector(".time_after");
-const img = document.querySelector(".img-exercise1");
+const img = document.querySelector(".main-window-app__exercises-content-img1");
 const text_zadanie = document.querySelector(".modal__header");
 
-const tab_exercise_container = document.querySelector(".tab_exercise_container");
+const tabExerciseContainer = document.querySelector(".main-window-app__header-tab-exercise-container");
 tabsShow();
 showQuestions(0);
 queCounter(1);
@@ -23,7 +23,7 @@ function tabsShow() {
   for(let i = 0; i < questions.length; i++) {
     tab_tag += '<div class="tab"></div>';
   }
-  tab_exercise_container.innerHTML = tab_tag;
+  tabExerciseContainer.innerHTML = tab_tag;
 }
 
 const tab = document.querySelector(".tab");
@@ -36,14 +36,14 @@ buttonNext.onclick = ()=> {
     showQuestions(que_count);
     queCounter(que_numb);
     clearInterval(counter);
-    
   } else {
-    container1.classList.toggle("hide");
-    container2.classList.toggle("hide");
+    firstAppPage.classList.toggle("hide");
+    secondAppPage.classList.toggle("hide");
   }
   
 }
 buttonPrev.onclick = ()=> {
+  if (que_numb === 0) return;
   console.log("нажата кнопка");
   que_count --;
   que_numb --;
@@ -51,10 +51,12 @@ buttonPrev.onclick = ()=> {
   queCounter(que_numb);
 }
 
-function showQuestions(index) {
+function showQuestions(index) { // task: do refactor later 
+  if (tabExerciseContainer.children[index].hasAttribute("class", "active_tab")) {
+    tabExerciseContainer.children[index+1].removeAttribute("class", "active_tab")
+  }
   const que_text = document.querySelector(".modal__header");
-  
-  tab_exercise_container.children[index].setAttribute("class", "active_tab")
+  tabExerciseContainer.children[index].setAttribute("class", "active_tab")
   let que_tag = '<span>'+ questions[index].question+'</span>';
   let img_tag = '';
   img_tag = questions[index].img;
@@ -73,7 +75,7 @@ function ShowResult() {
 }
 
 function queCounter(index) {
-  const ques_counter  = document.querySelector(".counter_exercise");
+  const ques_counter  = document.querySelector(".main-window-app__header-counter-exercise");
   let totalQuesTag = ''+ index +'/'+ questions.length +'';
   ques_counter.innerHTML = totalQuesTag;
 }

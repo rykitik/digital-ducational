@@ -7,8 +7,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
+center, dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
@@ -436,10 +435,38 @@ video {
 .w100{
     width: 100%;
 }
+.max-content{
+    width: max-content;
+}
+.center-results{
+    height: 100%;
+}
 /*  */
 
-/* Infographics */
-.window {
+/* Exercises pages */
+.main-window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-window-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1280px;
+    min-width: 400px;
+    margin: 0px 20px;
+} 
+.main-window-container__top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+.main-window-container__top-nav-icon {
+    margin-right: 10px;
+}
+.main-window-app {
     max-width: 1280px;
     width: 100%;
     min-width: 400px;
@@ -451,34 +478,53 @@ video {
     position: relative;
 }
 
-.container_header{
+.main-window-app__header{
     background-color: #43698F;
     height: 80px;
     width: 100%;
     border-radius: 15px 15px 0 0; 
 }
 
-.text_home{
+.main-window-app__header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-window-app__header-tab-exercise-container {
+    display: flex;
+}
+.main-window-container__top-nav-text{
     max-width: 1280px;
     width: 100%;
     /* min-width: 400px; */
     color: #43698F;
     font-weight: bold;
 }
-.max-content{
-    width: max-content;
-}
-.content1{
-    max-width: 1280px;
-    width: 100%;
-    min-width: 400px;
-    margin: 0px 20px;
-}
-.container_title{
+.main-window-app__header-container-title{
     font-weight: bold;
     font-size: 22px;
     color: #fff;
     padding: 20px 20px;
+}
+.main-window-app__exercises-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-window-app__exercises-content-item{
+    display: flex;
+    flex-direction: column;
+}
+.main-window-app_over-window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+.main-window-app_over-window-item {
+    text-align: center;
 }
 .tab{
     background-color: rgba(254, 254, 254, 0.5);
@@ -496,14 +542,14 @@ video {
     min-width: none;
     border-radius: 15px 15px 0 0;
 }
-.counter_exercise{
+.main-window-app__header-counter-exercise{
     color: #fff;
     padding: 20px;
 }
 .tab-exercise-container{
     padding:  0px 30px;
 }
-.container-exercise{
+.main-window-app__exercises{
     padding: 30px 50px 40px ;
     
 }
@@ -516,28 +562,25 @@ video {
         flex-wrap: wrap;
     }
 }
-.img-exercise img{
+.main-window-app__exercises-content-img img{
     width: 100%;
 }
-
 .img_question {
     display: flex;
     margin: 0 auto;
     width:200px
 }
-
 .img_question_table {
     display: flex;
     margin: 0 auto;
     width:800px
 }
-
 .img_question_img {
     display: flex;
     margin: 0 auto;
     width:400px
 }
-.text-exercise{
+.main-window-app__exercises-content-text{
     width: 100%;
     min-width: none;
     max-width: 630px;
@@ -547,7 +590,7 @@ video {
     width: 100%;
     justify-content: center;
 }
-.arrows1 {
+.main-window-app__arrows {
     display: flex;
     width: 100%;
     justify-content: end;
@@ -555,16 +598,18 @@ video {
     bottom: 20px;
     right: 50px;
 }
+.prev-btn, .next-btn {
+    cursor: pointer;
+}
 .list-dashed{
     list-style-type: none;
 }
 ul.list-dashed > li {
     
-  }
-  ul.list-dashed > li:before {
-    content: "-";
-   
-  }
+}
+ul.list-dashed > li:before {
+content: "-";
+}
 .time-counter{
     font-size: 22px;
     
@@ -644,10 +689,6 @@ button{
 }
 .disabled{
     pointer-events: none;
-}
-
-.center-results{
-    height: 100%;
 }
 
 .header__btns-nav {

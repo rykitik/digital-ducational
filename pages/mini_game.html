@@ -58,43 +58,44 @@
 		<div class="header__background-subtitle"></div>
 	</header>
 	<main class="main-bg--gray">
-		<div class="flex justify-center align-center">
-			<div class="content1 flex col max-content w100">
+		<div class="main-window">
+			<div class="main-window-container">
 				<a href="../index.html">
-					<div class="flex align-center justify-center mt-30"><img src="../img/right alignment.png" alt="arrow" class="mr-10"><a href="../index.html" class="text_home"> На главную</a></div>
+					<div class="main-window-container__top-nav"><img src="../img/right alignment.png" alt="arrow" class="main-window-container__top-nav-icon"><a href="../index.html" class="main-window-container__top-nav-text"> На главную</a></div>
 				</a>
-				<div class="window container1">
-					<div class="container_header">
-						<div class="flex align-center space-between">
-							<p class="container_title"> Интерактивная мини-игра </p>
-							<div class="counter_exercise" id="pages">
+				<div class="main-window-app first-app-page">
+					<div class="main-window-app__header">
+						<div class="main-window-app__header-container">
+							<p class="main-window-app__header-container-title"> Интерактивная мини-игра </p>
+							<div class="main-window-app__header-counter-exercise" id="pages">
 								<!-- 2/8 -->
 							</div>
 						</div>
-						<div class="flex tab_exercise_container">
+						<div class="main-window-app__header-tab-exercise-container">
 							<!--  <div class="tab"></div>
-                        <div class="tab" id="active_tab"></div>
-                        <div class="tab"></div>
-                        <div class="tab"></div>
-                        <div class="tab"></div> --></div>
+							<div class="tab" id="active_tab"></div>
+							<div class="tab"></div>
+							<div class="tab"></div>
+							<div class="tab"></div> -->
+						</div>
 					</div>
-					<div class="container-exercise display-container">
+					<div class="main-window-app__exercises display-container">
 						<div class="timer">
 							<div class="timer_container">
 								<div class="time-counter">
 									<!-- 1:00 -->
 								</div><img src="../img/stopwatch.png" alt=""></div>
 						</div>
-						<div class="flex space-between">
+						<div class="main-window-app__exercises-theme">
 							<p class="modal__header"></p>
 						</div>
-						<div class="flex container-filling align-center justify-center quest-container">
-							<div class="flex col" id="left-list"> </div>
-							<div class="flex col option-list" id="drag"> </div>
+						<div class="main-window-app__exercises-content container-filling quest-container">
+							<div class="main-window-app__exercises-content-item" id="left-list"> </div>
+							<div class="main-window-app__exercises-content-item option-list" id="drag"> </div>
 						</div>
 					</div>
 					<div class="arrows">
-						<button class="hide" id="next-button">
+						<button class="hide" class="next-btn">
 							<img src="../img/ArrowRight.png" alt="ArrowRight">
 						</button>
 					</div>
@@ -104,17 +105,17 @@
 		<div class="score-container hide">
 			<div id="user-score">Demo Score</div> <button id="restart">Restart</button> </div>
 		<!-- results -->
-		<div class="flex justify-center align-center">
-			<div class="window container2 hide">
-				<div class="container_header">
+		<div class="main-window">
+			<div class="main-window-app second-app-page hide">
+				<div class="main-window-app__header">
 					<div class="flex align-center justify-center">
-						<p class="container_title text-center"> Результаты </p>
-						<div class="counter_exercise" id="pages">
+						<p class="main-window-app__header-container-title text-center"> Результаты </p>
+						<div class="main-window-app__header-counter-exercise" id="pages">
 							<!-- 2/8 -->
 						</div>
 					</div>
 				</div>
-				<div class="flex center-results col mt-100 align-center justify-center">
+				<div class="main-window-app_over-window">
 					<div class="flex wrap container_box align-center justify-center">
 						<div class="box_1">
 							<p class="mb-10 box_1_text">Количество вопросов</p>

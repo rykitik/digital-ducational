@@ -9,62 +9,83 @@
 </head>
 <body>
     <header class="header">
-        <div class="header__container">
-            <div class="container__logo"><img src="../img/logo1.svg" alt="logo"></div>
+        <div class="container">
+            <div class="container__logo">
+                <img src="../img/logo1.svg" alt="logo">
+            </div>
             <div class="header__logo">
                 <div class="header__logo-title">
                     <div class="header__logo-title-text">
-                        <h2 class="white">Машиностроение</h2>
+                        <h2>Машиностроение</h2>
                     </div>
-                    <div class="header__btns-nav flex align-center mt-10"> <a href="#ex1" class="header__btn-nav header__btn-nav--contacts" rel="modal:open">Информация о контенте</a> <a href="#ex2" class="header__btn-nav header__btn-nav--words" rel="modal:open">Ключевые слова</a> </div>
+                    <div class="header__btns-nav">
+                        <a href="#ex1" class="header__btn-nav header__btn-nav--contacts" rel="modal:open">Информация о контенте</a>
+                        <a href="#ex2" class="header__btn-nav header__btn-nav--words" rel="modal:open">Ключевые слова</a>
+                    </div>
                 </div>
                 <div class="header__logo-subtitle">
                     <h3 class="header__logo-subtitle-text">Выбор оборудования, инструмента и технологической оснастки</h3>
-                </div>
+                 </div>
             </div>
         </div>
         <div class="header__background-subtitle"></div>
     </header>
     <main class="main-bg--gray">
-        <div class="flex justify-center align-center">
-            <div class="content1 flex col max-content w100">
-                <div class="flex align-center justify-center mt-30"><img src="../img/right alignment.png" alt="arrow" class="mr-10"><a href="../index.html" class="text_home"> На главную</a></div>
-                <div class="window container1">
-                    <div class="container_header">
-                        <div class="flex align-center space-between">
-                            <p class="container_title"> Инфографика </p>
-                            <p class="counter_exercise"></p>
+        <div class="main-window">
+            <div class="main-window-container">
+                <div class="main-window-container__top-nav">
+                    <img src="../img/right alignment.png" alt="arrow" class="main-window-container__top-nav-icon">
+                    <a href="../index.html" class="main-window-container__top-nav-text"> 
+                        На главную
+                    </a>
+                </div>
+                <div class="main-window-app first-app-page">
+                    <div class="main-window-app__header">
+                        <div class="main-window-app__header-container">
+                            <p class="main-window-app__header-container-title"> Инфографика </p>
+                            <p class="main-window-app__header-counter-exercise"></p>
                         </div>
-                        <div class="flex tab_exercise_container"> </div>
+                        <div class="main-window-app__header-tab-exercise-container"> </div>
                     </div>
-                    <div class="container-exercise">
-                        <div class="flex space-between">
+                    <div class="main-window-app__exercises">
+                        <div class="main-window-app__exercises-theme">
                             <p class="modal__header"></p>
                         </div>
-                        <div class="flex container-filling align-center justify-center">
-                            <div class="img-exercise"><img src="" alt="" class="img-exercise1"></div>
-                            <div class="flex col">
-                                <p class="text-exercise"> </p>
+                        <div class="main-window-app__exercises-content container-filling">
+                            <div class="main-window-app__exercises-content-img">
+                                <img src="" alt="" class="main-window-app__exercises-content-img1">
+                            </div>
+                            <div class="main-window-app__exercises-content-item">
+                                <p class="main-window-app__exercises-content-text"> </p>
                             </div>
                         </div>
-                        <div class="arrows1"><button class="prevbutton"><img src="../img/ArrowLeft.png" ></button><button id="next-button"><img src="../img/ArrowRight.png" alt="ArrowRight"></button></div>
+                        <div class="main-window-app__arrows">
+                            <button class="prev-btn">
+                                <img src="../img/ArrowLeft.png" >
+                            </button>
+                            <button class="next-btn">
+                                <img src="../img/ArrowRight.png" alt="ArrowRight" />
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="flex justify-center align-center">
-            <div class="window container2 hide">
-                <div class="container_header">
+        <div class="main-window">
+            <div class="main-window-app second-app-page hide">
+                <div class="main-window-app__header">
                     <div class="flex align-center justify-center">
-                        <p class="container_title text-center"> </p>
-                        <div class="counter_exercise" id="pages">
+                        <p class="main-window-app__header-container-title text-center"> </p>
+                        <div class="main-window-app__header-counter-exercise" id="pages">
                             <!-- 2/8 -->
                         </div>
                     </div>
                 </div>
-                <div class="flex center-results col mt-100 align-center justify-center">
-                    <p class="text-center">Вы завершили прохождение виртуального тренажера</p>
-                    <p class="text-center"><b><a href="../index.html">Нажмите, чтобы вернуться на главную</a></b></p>
+                <div class="main-window-app_over-window">
+                    <p class="main-window-app_over-window-item">Вы завершили прохождение виртуального тренажера</p>
+                    <p class="main-window-app_over-window-item">
+                        <b><a href="../index.html">Нажмите, чтобы вернуться на главную</a></b>
+                    </p>
                 </div>
             </div>
         </div>
