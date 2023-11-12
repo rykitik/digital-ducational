@@ -699,6 +699,14 @@ button{
     margin-top: 10px;
 }
 
+.main-window-app__exercises-theme-text{
+    color: #251212;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 20px 0 10px 0;
+    max-width: 1120px;
+}
+
 .blocker{
     z-index: 5 !important;
 }

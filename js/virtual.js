@@ -39,7 +39,7 @@ function openTab(index) {
   queCounter(que_numb);
 }
 
-function updateTabs(index) {
+function updateTabs(index) { // task: do avtive_tab только выполненным заданиям
   for (let i = 0; i < questions.length; i++) {
     tabExerciseContainer.children[i].removeAttribute("class", "active_tab");
     tabExerciseContainer.children[i].setAttribute("class", "tab");
@@ -72,14 +72,15 @@ buttonNext.onclick = ()=> {
 
 function showQuestions(index) {
   if (index < 0 || questions.length === index) return;
-  updateTabs(index)
+  updateTabs(index);
+  tabExerciseContainer.children[index].setAttribute("class", "active_tab")
 
-  const que_text = document.querySelector(".modal__header");
+  const que_text = document.querySelector(".main-window-app__exercises-theme-text");
   let que_tag = '<span>'+ questions[index].question+'</span>';
   let option_tag = '';
   let left_tag = '';
   for(let i = 0; i < questions[index].options.length; i++){
-    option_tag += '<div class="option" id="cells"><span>'+questions[index].options[i]+'</span></div>';
+    option_tag += '<div class="option" id="cells"><span>' + questions[index].options[i]+'</span></div>';
   }
   
   if(questions[index].id==2) {
@@ -175,7 +176,7 @@ for (let i = 0; i < allOptions; i++) {
   option_list.children[i].classList.add("disabled");
 
 }
- buttonNext.classList.remove("hide");
+  buttonNext.classList.remove("hide");
 }
 
 function startTimer(time) {
