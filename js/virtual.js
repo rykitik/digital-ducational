@@ -24,11 +24,28 @@ const result_box = document.querySelector(".correct_answers");
 
 function tabsShow() {
   let tab_tag = "";
-  console.log(questions.length);
-  for(let i = 0; i < questions.length; i++){
-    tab_tag += '<div class="tab"></div>';
+  console.log('Вопросов: ', questions.length);
+  for(let i = 0; i < questions.length; i++) {
+    let nextNumb = i + 1;
+    tab_tag += '<div class="tab" onclick="openTab('+ i +')"> ' + nextNumb + ' </div>';
   }
   tabExerciseContainer.innerHTML = tab_tag;
+}
+
+function openTab(index) {
+  que_count = index;
+  que_numb = index + 1;
+  showQuestions(que_count);
+  queCounter(que_numb);
+}
+
+function updateTabs(index) {
+  for (let i = 0; i < questions.length; i++) {
+    tabExerciseContainer.children[i].removeAttribute("class", "active_tab");
+    tabExerciseContainer.children[i].setAttribute("class", "tab");
+  }
+  tabExerciseContainer.children[index].removeAttribute("class", "tab");
+  tabExerciseContainer.children[index].setAttribute("class", "active_tab");
 }
 
 const tab = document.querySelector(".tab");
@@ -54,9 +71,10 @@ buttonNext.onclick = ()=> {
 }
 
 function showQuestions(index) {
+  if (index < 0 || questions.length === index) return;
+  updateTabs(index)
+
   const que_text = document.querySelector(".modal__header");
-  
-  tabExerciseContainer.children[index].setAttribute("class", "active_tab")
   let que_tag = '<span>'+ questions[index].question+'</span>';
   let option_tag = '';
   let left_tag = '';
