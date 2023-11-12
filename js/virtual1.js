@@ -22,7 +22,7 @@ function tabsShow() {
   console.log('Вопросов: ', questions.length);
   for(let i = 0; i < questions.length; i++) {
     let nextNumb = i + 1;
-    tab_tag += '<div class="tab"> ' + nextNumb + ' </div>';
+    tab_tag += '<div class="tab" onclick="openTab('+ i +')"> ' + nextNumb + ' </div>';
   }
   tabExerciseContainer.innerHTML = tab_tag;
 }
@@ -51,6 +51,13 @@ buttonPrev.onclick = ()=> {
   queCounter(que_numb);
 }
 
+function openTab(index) {
+  que_count = index;
+  que_numb = index + 1;
+  showQuestions(que_count);
+  queCounter(que_numb);
+}
+
 function updateTabs(index) {
   for (let i = 0; i < questions.length; i++) {
     tabExerciseContainer.children[i].removeAttribute("class", "active_tab");
@@ -58,7 +65,6 @@ function updateTabs(index) {
   }
   tabExerciseContainer.children[index].removeAttribute("class", "tab");
   tabExerciseContainer.children[index].setAttribute("class", "active_tab");
-
 }
 
 function showQuestions(index) { // task: do refactor later // FIX TAB COUNTS

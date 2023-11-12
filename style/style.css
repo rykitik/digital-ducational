@@ -503,6 +503,7 @@ video {
     min-width: 30px;
     border-radius: 15px 15px 0 0;
     text-align: center;
+    cursor: pointer;
 }
 .active_tab{
     background-color: #FEFEFE!important;
@@ -512,6 +513,7 @@ video {
     min-width: 30px;
     border-radius: 15px 15px 0 0;
     text-align: center;
+    cursor: pointer;
 }
 .main-window-app__header-counter-exercise{
     color: #fff;
