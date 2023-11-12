@@ -19,9 +19,10 @@ let counter;
 
 function tabsShow() {
   let tab_tag = "";
-  console.log(questions.length);
+  console.log('Вопросов: ', questions.length);
   for(let i = 0; i < questions.length; i++) {
-    tab_tag += '<div class="tab"></div>';
+    let nextNumb = i + 1;
+    tab_tag += '<div class="tab"> ' + nextNumb + ' </div>';
   }
   tabExerciseContainer.innerHTML = tab_tag;
 }
@@ -30,20 +31,19 @@ const tab = document.querySelector(".tab");
 
 //if next btn clicked
 buttonNext.onclick = ()=> {
-  if(que_count < questions.length - 1) {
-    que_count ++;
-    que_numb ++;
-    showQuestions(que_count);
-    queCounter(que_numb);
-    clearInterval(counter);
-  } else {
+  if (que_numb === questions.length) {
     firstAppPage.classList.toggle("hide");
     secondAppPage.classList.toggle("hide");
+    return;
   }
-  
+  que_count ++;
+  que_numb ++;
+  showQuestions(que_count);
+  queCounter(que_numb);
+  // clearInterval(counter);  
 }
 buttonPrev.onclick = ()=> {
-  if (que_numb === 0) return;
+  if (que_numb === 1) return;
   console.log("нажата кнопка");
   que_count --;
   que_numb --;
@@ -51,12 +51,20 @@ buttonPrev.onclick = ()=> {
   queCounter(que_numb);
 }
 
-function showQuestions(index) { // task: do refactor later 
-  if (tabExerciseContainer.children[index].hasAttribute("class", "active_tab")) {
-    tabExerciseContainer.children[index+1].removeAttribute("class", "active_tab")
+function updateTabs(index) {
+  for (let i = 0; i < questions.length; i++) {
+    tabExerciseContainer.children[i].removeAttribute("class", "active_tab");
+    tabExerciseContainer.children[i].setAttribute("class", "tab");
   }
+  tabExerciseContainer.children[index].removeAttribute("class", "tab");
+  tabExerciseContainer.children[index].setAttribute("class", "active_tab");
+
+}
+
+function showQuestions(index) { // task: do refactor later // FIX TAB COUNTS
+  if (index < 0 || questions.length === index) return;
+  updateTabs(index)
   const que_text = document.querySelector(".modal__header");
-  tabExerciseContainer.children[index].setAttribute("class", "active_tab")
   let que_tag = '<span>'+ questions[index].question+'</span>';
   let img_tag = '';
   img_tag = questions[index].img;
