@@ -70,7 +70,7 @@ function updateTabs(index) {
 function showQuestions(index) { // task: do refactor later // FIX TAB COUNTS
   if (index < 0 || questions.length === index) return;
   updateTabs(index)
-  const que_text = document.querySelector(".modal__header");
+  const que_text = document.querySelector(".main-window-app__exercises-content-textf");
   let que_tag = '<span>'+ questions[index].question+'</span>';
   let img_tag = '';
   img_tag = questions[index].img;

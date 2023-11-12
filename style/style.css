@@ -545,6 +545,14 @@ video {
     display: flex;
     flex-direction: column;
 }
+.main-window-app__exercises-content-img img{
+    width: 100%;
+}
+.main-window-app__exercises-content-text{
+    width: 100%;
+    min-width: none;
+    max-width: 630px;
+}
 .main-window-app_over-window {
     display: flex;
     flex-direction: column;
@@ -564,9 +572,6 @@ video {
         flex-wrap: wrap;
     }
 }
-.main-window-app__exercises-content-img img{
-    width: 100%;
-}
 .img_question {
     display: flex;
     margin: 0 auto;
@@ -581,11 +586,6 @@ video {
     display: flex;
     margin: 0 auto;
     width:400px
-}
-.main-window-app__exercises-content-text{
-    width: 100%;
-    min-width: none;
-    max-width: 630px;
 }
 .arrows {
     display: flex;
